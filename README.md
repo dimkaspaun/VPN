@@ -138,49 +138,16 @@ iperf3 -s &
 
 ```bash
 iperf3 -c 10.10.10.1 -t 40 -i 5
-
-Connecting to host 10.10.10.1, port 5201
-[  4] local 10.10.10.2 port 48054 connected to 10.10.10.1 port 5201
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-5.00   sec   112 MBytes   188 Mbits/sec   56    626 KBytes       
-[  4]   5.00-10.00  sec   115 MBytes   193 Mbits/sec    5    630 KBytes       
-[  4]  10.00-15.00  sec   114 MBytes   191 Mbits/sec    0    690 KBytes       
-[  4]  15.00-20.00  sec   113 MBytes   189 Mbits/sec    0    801 KBytes       
-[  4]  20.00-25.00  sec   111 MBytes   187 Mbits/sec   10    995 KBytes       
-[  4]  25.00-30.01  sec   114 MBytes   192 Mbits/sec    0   1.24 MBytes       
-[  4]  30.01-35.01  sec   109 MBytes   184 Mbits/sec    1   1.05 MBytes       
-[  4]  35.01-40.00  sec   112 MBytes   188 Mbits/sec    0   1.07 MBytes       
-- - - - - - - - - - - - - - - - - - - - - - - - -
-[ ID] Interval           Transfer     Bandwidth       Retr
-[  4]   0.00-40.00  sec   901 MBytes   189 Mbits/sec   72             sender
-[  4]   0.00-40.00  sec   898 MBytes   188 Mbits/sec                  receiver
-
-iperf Done.
 ```
+![2024-02-29_12-09-35](https://github.com/dimkaspaun/VPN/assets/156161074/ab61c54d-6bd7-4df8-b297-2f35224b00c5)
+
 
 ### Повторяем пункты 1-5 для режима работы tun. Конфигурационные файлы сервера и клиента изменяться только в директиве dev. Делаем выводы о режимах, их достоинствах и недостатках
 
-```bash
-Connecting to host 10.10.10.1, port 5201
-[  4] local 10.10.10.2 port 48058 connected to 10.10.10.1 port 5201
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-5.01   sec   113 MBytes   190 Mbits/sec   78    433 KBytes       
-[  4]   5.01-10.00  sec   118 MBytes   198 Mbits/sec    0    599 KBytes       
-[  4]  10.00-15.00  sec   119 MBytes   199 Mbits/sec  130    445 KBytes       
-[  4]  15.00-20.01  sec   117 MBytes   195 Mbits/sec    0    601 KBytes       
-[  4]  20.01-25.01  sec   115 MBytes   194 Mbits/sec    1    617 KBytes       
-[  4]  25.01-30.01  sec   115 MBytes   193 Mbits/sec  281    469 KBytes       
-[  4]  30.01-35.00  sec   116 MBytes   196 Mbits/sec    0    622 KBytes       
-[  4]  35.00-40.01  sec   112 MBytes   188 Mbits/sec    3    632 KBytes       
-- - - - - - - - - - - - - - - - - - - - - - - - -
-[ ID] Interval           Transfer     Bandwidth       Retr
-[  4]   0.00-40.01  sec   925 MBytes   194 Mbits/sec  493             sender
-[  4]   0.00-40.01  sec   924 MBytes   194 Mbits/sec                  receiver
+![2024-02-29_12-09-22](https://github.com/dimkaspaun/VPN/assets/156161074/179419b1-7a5b-4ccb-be00-025cbceacef8)
 
-iperf Done.
-```
 
-> В tun режиме чуть быстрее при проведение теста на виртуалках, но и много потерь пакетов.
+> В tap режиме чуть быстрее при проведение теста на виртуалках, но и много потерь пакетов.
 
 ## RAS на базе OpenVPN
 
